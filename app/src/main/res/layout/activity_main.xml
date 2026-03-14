@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgDark"
+    android:orientation="horizontal"
+    android:padding="40dp">
+
+    <!-- SOL PANEL: Başlık + Buton -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingEnd="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡"
+            android:textSize="52sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIZ TESTİ"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:letterSpacing="0.18"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TCL C855  •  Ağ Analizi"
+            android:textSize="13sp"
+            android:textColor="@color/textSecondary"
+            android:layout_marginBottom="48dp" />
+
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_width="240dp"
+            android:layout_height="56dp"
+            android:text="TESTİ BAŞLAT"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/bgDark"
+            android:backgroundTint="@color/colorAccent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="18dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="240dp"
+            android:layout_height="4dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorAccent"
+            android:visibility="gone"
+            android:layout_marginBottom="14dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK tuşuna basarak başlatın"
+            android:textSize="12sp"
+            android:textColor="@color/textSecondary"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- SAĞ PANEL: Sonuçlar -->
+    <LinearLayout
+        android:id="@+id/resultPanel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <!-- İnternet Hızı -->
+        <TextView
+            style="@style/SectionLabel"
+            android:text="🌐  İNTERNET HIZI" />
+
+        <LinearLayout
+            style="@style/Card"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView style="@style/MetricLabel" android:text="⬇  İNDİRME" />
+                <TextView
+                    android:id="@+id/tvDownload"
+                    style="@style/MetricValue"
+                    android:text="—" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView style="@style/MetricLabel" android:text="⬆  YÜKLEME" />
+                <TextView
+                    android:id="@+id/tvUpload"
+                    style="@style/MetricValue"
+                    android:text="—" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Ping + Wi-Fi yan yana -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="7dp">
+
+                <TextView
+                    style="@style/SectionLabel"
+                    android:text="🏓  GECİKME" />
+
+                <LinearLayout style="@style/Card">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView style="@style/MetricLabel" android:text="PING" />
+                        <TextView
+                            android:id="@+id/tvPing"
+                            style="@style/MetricValue"
+                            android:text="—" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="7dp">
+
+                <TextView
+                    style="@style/SectionLabel"
+                    android:text="📶  WI-FI" />
+
+                <LinearLayout style="@style/Card">
+                    <TextView
+                        android:id="@+id/tvWifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alınıyor..."
+                        android:textSize="13sp"
+                        android:textColor="@color/textPrimary"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- CPU / RAM -->
+        <TextView
+            style="@style/SectionLabel"
+            android:text="🖥  SİSTEM DURUMU" />
+
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView style="@style/MetricLabel" android:text="CPU" />
+                <TextView
+                    android:id="@+id/tvCpu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hesaplanıyor..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView style="@style/MetricLabel" android:text="RAM" />
+                <TextView
+                    android:id="@+id/tvRam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hesaplanıyor..."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

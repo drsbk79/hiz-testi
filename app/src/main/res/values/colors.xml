@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgDark">#0B0E14</color>
+    <color name="bgCard">#141922</color>
+    <color name="colorAccent">#00D4FF</color>
+    <color name="colorGood">#00E676</color>
+    <color name="colorWarn">#FF9800</color>
+    <color name="textPrimary">#F0F4FF</color>
+    <color name="textSecondary">#6B7A8D</color>
+    <color name="divider">#1C2535</color>
+</resources>

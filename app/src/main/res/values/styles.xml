@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/bgDark</item>
+        <item name="android:colorPrimary">@color/colorAccent</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <!-- Kart container -->
+    <style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/card_bg</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">18dp</item>
+    </style>
+
+    <!-- Bölüm etiketi -->
+    <style name="SectionLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+    </style>
+
+    <!-- Metrik küçük başlık -->
+    <style name="MetricLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <!-- Büyük değer -->
+    <style name="MetricValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <!-- Dikey ayraç -->
+    <style name="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/divider</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+    </style>
+
+</resources>
