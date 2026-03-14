@@ -1,0 +1,46 @@
+name: Android TV - APK Derle
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Kodu Indir
+        uses: actions/checkout@v4
+
+      - name: Java 17 Kur
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Gradle Wrapper Indir
+        run: |
+          wget -q https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar \
+               -O gradle/wrapper/gradle-wrapper.jar
+
+      - name: Gradle Izin
+        run: chmod +x gradlew
+
+      - name: Gradle Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ hashFiles('**/*.gradle*') }}
+
+      - name: Debug APK Derle
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: APK Kaydet
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedTestTV-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
